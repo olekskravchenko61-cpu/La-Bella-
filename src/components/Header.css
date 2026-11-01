@@ -1,0 +1,128 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(23, 23, 23, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.header--scrolled {
+  background-color: rgba(17, 17, 17, 0.97);
+  border-bottom-color: var(--color-border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+}
+
+.header__logo {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+  flex-shrink: 0;
+}
+
+.header__logo span {
+  color: var(--color-accent);
+}
+
+.header__nav--desktop ul {
+  display: flex;
+  gap: 34px;
+}
+
+.header__nav--desktop a {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  transition: color 0.15s ease;
+}
+
+.header__nav--desktop a:hover {
+  color: var(--color-text);
+}
+
+.header__actions--desktop {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.header__call {
+  padding: 11px 22px;
+  font-size: 0.85rem;
+}
+
+.header__burger {
+  display: none;
+  color: var(--color-text);
+  padding: 6px;
+}
+
+.header__mobile {
+  display: none;
+}
+
+@media (max-width: 880px) {
+  .header__nav--desktop,
+  .header__actions--desktop {
+    display: none;
+  }
+
+  .header__burger {
+    display: flex;
+  }
+
+  .header__mobile {
+    position: fixed;
+    inset: var(--header-height) 0 0 0;
+    background-color: var(--color-bg);
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    transform: translateX(100%);
+    transition: transform 0.28s ease;
+    overflow-y: auto;
+  }
+
+  .header__mobile.is-open {
+    transform: translateX(0);
+  }
+
+  .header__mobile ul {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .header__mobile a {
+    display: block;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--color-text);
+    padding: 14px 4px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .header__mobile-call {
+    justify-content: center;
+    padding: 16px;
+    font-size: 1rem;
+  }
+
+  .header__mobile-lang {
+    justify-content: center;
+    font-size: 1.1rem;
+  }
+}

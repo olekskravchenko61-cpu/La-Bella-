@@ -1,0 +1,33 @@
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.lang-switcher__item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lang-switcher__btn {
+  padding: 4px 2px;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.04em;
+  transition: color 0.15s ease;
+}
+
+.lang-switcher__btn:hover {
+  color: var(--color-text);
+}
+
+.lang-switcher__btn.is-active {
+  color: var(--color-accent);
+}
+
+.lang-switcher__divider {
+  color: var(--color-border);
+}
